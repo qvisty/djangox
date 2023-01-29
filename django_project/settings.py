@@ -28,9 +28,11 @@ INSTALLED_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
     "debug_toolbar",
+    "django_tables2",
     # Local
     "accounts",
     "pages",
+    "skole",
 ]
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#middleware
@@ -64,6 +66,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "django.template.context_processors.request",
             ],
         },
     },
@@ -107,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # https://docs.djangoproject.com/en/dev/topics/i18n/
 # https://docs.djangoproject.com/en/dev/ref/settings/#language-code
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "da-DK"
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#time-zone
 TIME_ZONE = "UTC"
