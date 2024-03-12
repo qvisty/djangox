@@ -1,0 +1,62 @@
+{% extends '_base.html' %}
+{% load render_table from django_tables2 %}
+
+{% block title %}SFO{% endblock %}
+
+{% block content %}
+<h1>List of Elev in SFO Gruppe</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>SFO Gruppe</th>
+            <th>Fornavn</th>
+            <th>Efternavn</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for group in groups %}
+        <tr>
+            <td colspan="3">{{ group.0 }}</td>
+        </tr>
+        {% for elev in group.1 %}
+        <tr>
+            <td></td>
+            <td>{{ elev.fornavn }}</td>
+            <td>{{ elev.efternavn }}</td>
+        </tr>
+        {% endfor %}
+        {% endfor %}
+    </tbody>
+</table>
+
+<h1 class="mb-3">List of Elev in SFO Gruppe</h1>
+
+<table class="table">
+    <thead class="thead-light">
+        <tr>
+            <th>SFO Gruppe</th>
+            <th>Fornavn</th>
+            <th>Efternavn</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for group in groups %}
+        <tr>
+            <td colspan="3" class="bg-secondary text-white">{{ group.0 }}</td>
+        </tr>
+        {% for elev in group.1 %}
+        <tr>
+            <td></td>
+            <td>{{ elev.fornavn }}</td>
+            <td>{{ elev.efternavn }}</td>
+        </tr>
+        {% endfor %}
+        {% endfor %}
+    </tbody>
+</table>
+
+<h1>List of Elev in SFO Gruppe</h1>
+{% render_table table %}
+
+{% endblock content %}
