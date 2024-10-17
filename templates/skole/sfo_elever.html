@@ -1,0 +1,15 @@
+{% extends '_base.html' %}
+
+{% block title %}SFO{% endblock %}
+
+{% block content %}
+<h1>List of Elev in SFO Gruppe</h1>
+{% for sfo_gruppe, elev_list in elevs_grouped %}
+<h2>{{ sfo_gruppe.gruppe_nummer }}</h2>
+<ul>
+    {% for elev in elev_list %}
+    <li>{{ elev.fornavn }} {{ elev.efternavn }}</li>
+    {% endfor %}
+</ul>
+{% endfor %}
+{% endblock content %}
